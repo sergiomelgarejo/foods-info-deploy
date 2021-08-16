@@ -1,0 +1,37 @@
+.cardBox {
+  display: inline-block;
+}
+
+.item {
+  color: black;
+  font-size: 1.45rem;
+  font-weight: 600;
+  padding: .5rem .25rem;
+}
+
+/* hover effect styles */
+.item::before {  
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+.item:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.item::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: rgba(0, 255, 0, 0.664);
+  z-index: -1;
+  transition: transform .7s ease;
+}
+
+.item {
+  position: relative;
+}
+
